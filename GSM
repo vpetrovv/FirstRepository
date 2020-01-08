@@ -1,0 +1,172 @@
+
+
+namespace TestOOP
+{
+
+    using System;
+    using System.Collections.Generic;
+
+    public class Gsm
+
+    {
+        private string model;
+        private string manufacturer;
+        private double price;
+        private string owner;
+        private static Gsm iPhone4S;
+
+
+        public Gsm()
+        {
+
+        }
+        public Gsm(string model, string manufactorer, double price, string owner)
+        {
+            this.model = model;
+            this.manufacturer = manufactorer;
+            this.price = price;
+            this.owner = owner;
+
+        }
+        static Gsm()
+        {
+            iPhone4S = new Gsm("Iphone 4S", "Apple", 2000.11, "Dimitar");
+        }
+
+        public string Model
+        {
+            get
+            {
+                return this.model;
+            }
+            set
+            {
+                this.model = model;
+            }
+
+
+        }
+
+        public string Manufactorer
+        {
+            get
+            {
+                return this.manufacturer;
+            }
+            set
+            {
+                this.manufacturer = manufacturer;
+            }
+        }
+
+        public double Price
+        {
+            get
+            {
+                return this.price = 0;
+            }
+            set
+            {
+                this.price = value;
+            }
+        }
+        public string Owner
+        {
+            get
+            {
+                return this.owner = null;
+            }
+
+            set
+            {
+                this.owner = value;
+            }
+
+        }
+
+
+        public static Gsm Iphone4S
+        {
+            get
+            {
+                return iPhone4S;
+            }
+            set
+            {
+                iPhone4S = value;
+            }
+        }
+
+
+        public override string ToString()
+        {
+            Console.WriteLine("-------GSM------");
+            Console.WriteLine("Gsm model: " + this.model);
+            Console.WriteLine("Gsm Manufacturer: " + this.manufacturer);
+            Console.WriteLine("Gsm price: " + this.price);
+            Console.WriteLine("Gsm owner: " + this.owner);
+            return base.ToString();
+
+        }
+
+        public List<Call> CallHistory = new List<Call>();
+
+        public void AddCalls(DateTime dateAndTime, string phoneNumber, int duration)
+        {
+            Call call = new Call(dateAndTime, phoneNumber, duration);
+            CallHistory.Add(call);
+        }
+        public void DeleteCalls(int duration)
+        {
+            for (int i = 0; i < CallHistory.Count; i++)
+            {
+                if (CallHistory[i].Duration == duration)
+                {
+                    CallHistory.RemoveAt(i);
+                    i--;
+                }
+            }
+        }
+        public void ClearCalls()
+        {
+            CallHistory.Clear();
+        }
+
+        public void CalculateTotalPrice(double pricePerMinute)
+        {
+            double wholeTime = 0;
+            for (int i = 0; i < CallHistory.Count; i++)
+            {
+                wholeTime += CallHistory[i].Duration;
+            }
+
+            double price = pricePerMinute * (Math.Ceiling(wholeTime / 60));
+            Console.WriteLine("Total price: " + price);
+            Console.WriteLine();
+
+
+
+         
+        }
+        public void PrintCalls()
+        {
+            for (int i = 0; i < CallHistory.Count; i++)
+            {
+                Console.WriteLine("---------- Calls ----------");
+                Console.WriteLine("Date and Time: " + CallHistory[i].DateAndTime);
+                Console.WriteLine("Dialed phone number: " + CallHistory[i].PhoneNumber);
+                Console.WriteLine("Duration: {0} seconds ", CallHistory[i].Duration);
+                Console.WriteLine();
+            }
+        }
+
+
+
+    }
+
+
+
+
+}
+
+
