@@ -1,0 +1,31 @@
+
+namespace  TestOOP
+
+{
+    class Display
+    {
+
+        private double size;
+        private string colors;
+
+        public Display(double size,string colors)
+        {
+            this.size = size;
+            this.colors = colors;
+        }
+
+        public double DisplaySize
+        {
+            get { return size; }
+            set { size = value; }
+        }
+
+        public string DisplayColors
+        {
+            get { return colors; }
+            set {colors = value; }
+        }
+
+
+    }
+}
