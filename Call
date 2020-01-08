@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TestOOP
+{
+    public class Call
+    {
+        private DateTime dateAndTime;
+        private string phoneNumber;
+        private int duration;
+
+
+        public Call(DateTime dateAndTime, string phoneNUmber, int duration)
+        {
+            this.dateAndTime = dateAndTime;
+            this.phoneNumber = phoneNumber;
+            this.duration = duration;
+
+        }
+        public DateTime DateAndTime 
+        {
+            get { return dateAndTime; }
+            set { dateAndTime = value; }
+        }
+
+
+        public string PhoneNumber
+        {
+            get { return phoneNumber; }
+            set { phoneNumber = value; }
+        }
+        public int Duration
+        {
+            get { return duration; }
+            set { duration = value; }
+        }
+
+
+
+
+
+    }
+
+
+
+}
+
