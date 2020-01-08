@@ -1,0 +1,52 @@
+
+namespace TestOOP
+
+{
+    class Battery
+    {
+
+        public enum BatteryType
+        {
+            LiIon, NiMH, NiCd
+        }
+
+
+
+        private BatteryType batteryModel;
+        private int hoursIdle;
+        private int hoursTalk;
+
+        public Battery(BatteryType   batteryModel,int hoursIdle,int hoursTalk)
+        {
+            this.batteryModel = batteryModel;
+            this.hoursIdle = hoursIdle;
+            this.hoursTalk = hoursTalk;
+
+        }
+
+        public BatteryType BatterModel
+        {
+            get
+            {
+                return batteryModel;
+            }
+        }
+
+
+        public int BatteryHoursIdle
+        {
+            get { return hoursIdle; }
+            set { hoursIdle = value; }
+        }
+
+        public int BatteryHoursTalk
+        {
+            get { return hoursTalk; }
+            set { hoursTalk = value; }
+        }
+
+
+
+
+    }
+}
