@@ -1,0 +1,59 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace TestOOP
+{
+    class GSMTest
+    {
+
+        static void Main()
+        {
+            Gsm[] array = new Gsm[3];
+            Gsm firstGSM = new Gsm("Galaxy S 4", "Samsung", 800.00, "Misho");
+            array[0] = firstGSM;
+            Gsm secondGSM = new Gsm("Xperia", "Sony", 700.01, "Ivan");
+            array[1] = secondGSM;
+            Gsm thirdGSM = new Gsm("Optimus", "LG", 500.21, "Daniel");
+            array[2] = thirdGSM;
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i].ToString();
+            }
+            Gsm.Iphone4S.ToString();
+
+            Gsm fourthGSM = new Gsm("Desire 500", "HTC", 1111, "Maria");
+            Console.WriteLine("Add some calls and print...");
+            fourthGSM.AddCalls(DateTime.Now, "088088311", 55);
+            fourthGSM.AddCalls(DateTime.Now, "088088088", 94);
+            fourthGSM.AddCalls(DateTime.Now, "088111221", 33);
+            fourthGSM.PrintCalls();
+            //Delete call and print
+            Console.WriteLine("Delete call and print... ");
+            fourthGSM.DeleteCalls(55);
+            fourthGSM.PrintCalls();
+
+            //Calculate total price
+            fourthGSM.CalculateTotalPrice(0.37);
+
+            //Clear calls and print
+            fourthGSM.ClearCalls();
+            fourthGSM.PrintCalls();
+
+
+
+
+
+
+        }
+
+
+
+
+
+    }
+}
